@@ -14,4 +14,12 @@ git cherry-pick -n 0dcd397b29507b8314e252e850518c5695efbb83
 
 Another change required to fix `AttributeError: can't set attribute` in caffe.Net is patched here https://github.com/andpol5/caffe/commit/1bbcb0605fe67525a8493fb477d30119893a0978
 
+### install py-faster-rcnn (without GPU support)
 
+Checkout from https://github.com/dungba88/py-faster-rcnn. It includes fixes for Python3 compatibility.
+
+Make the following changes for CPU only
+- in lib/setup.py, uncomment `CUDA = locate_cuda()` and the `nms.gpu_nms` extension
+- in lib/fast-rcnn/config.py set `USE_GPU_NMS` to False
+
+Then follow the rest of the original guide!

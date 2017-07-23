@@ -79,7 +79,7 @@ sudo cp build/lib/libcaffe.so* /usr/lib
 
 ### install caffe (with GPU support)
 
-1. First install CUDA and CUDNN
+1. First install CUDA and (optional) CUDNN
 
 ```shell
 sudo apt-get install nvidia-cuda-dev nvidia-cuda-toolkit nvidia-nsight
@@ -88,7 +88,7 @@ sudo apt-get install nvidia-cuda-dev nvidia-cuda-toolkit nvidia-nsight
 For CUDNN, you need to register as a developer in https://developer.nvidia.com/cudnn. Then you will be able to download CUDNN. Download the runtime and developer library and install in that order.
 
 The rest are mostly the same with above section, but there are some differences:
-- In Makefile.config, uncomment USE_CDNN and comment CPU_ONLY
+- In Makefile.config, uncomment USE_CDNN (if you want to use CuDNN, though that it's not required) and comment CPU_ONLY
 - In Makefile.config, since I installed CUDA via apt-get, so CUDA_DIR := /usr needs to be uncommented
 - In Makefile, since I installed on Ubuntu 17.04, which has GCC6 that CUDA doesn't support, so CXX need to be set to clang-3.8. Find NVCCFLAGS += -ccbin=$(CXX) and change $(CXX) to clang-3.8. I couldn't set CUSTOM_CXX in Makefile.config to clang-3.8 because another error comes up (`Cannot static link with compiler clang-3.8`)
 

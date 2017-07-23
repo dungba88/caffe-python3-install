@@ -54,18 +54,8 @@ cp Makefile.config.example Makefile.config
 
 - Uncomment `CPU_ONLY := 1`
 - Uncomment `WITH_PYTHON_LAYER := 1`
-- Uncomment section with Python3
 - Uncomment `OPENCV_VERSION := 3`
-- Add `/usr/include/hdf5/serial` to INCLUDE_DIRS (https://github.com/BVLC/caffe/issues/4808)
-- Change `BLAS := atlas` to `BLAS := open` to use openblas instead. I have `undefined symbol cblas_sgemm` when using atlas.
-
-4. Modify Makefile
-
-- Change `hdf5_hl` and `hdf5` in LIBRARIES to `hdf5_serial_hl` and `hdf5_serial` respectively
-
-5. Additional changes
-
-- Create symbolic link from libboost_python-py35.so to libboost_python3 (https://github.com/BVLC/caffe/issues/4843)
+- Uncomment section with Python3
 
 6. Compile and test
 
@@ -75,17 +65,42 @@ make test
 make runtest
 ```
 
+7. Possible errors:
+
+Check [Troubleshooting](#Trouble shooting) section, issue 1, 2, 3
+
+### Install PyCaffe
+
+1. Compile
+
+```shell
+make pycaffe
+```
+
+2. Possible errors:
+
+Check [Troubleshooting](#Trouble shooting) section, issue 4
+
 ### Troubleshooting
 
 1. hdf5.h: No such file or directory
 
+In Makefile.config
 - Add `/usr/include/hdf5/serial` to INCLUDE_DIRS (https://github.com/BVLC/caffe/issues/4808)
+
+In Makefile
 - Change `hdf5_hl` and `hdf5` in LIBRARIES to `hdf5_serial_hl` and `hdf5_serial` respectively
 
 2. Undefined symbol cblas_*
 
+In Makefile.config
 - Change `BLAS := atlas` to `BLAS := open` to use openblas instead
 
 3. ld cannot find lboost_python3
 
 - Create symbolic link from libboost_python-py35.so to libboost_python3 (https://github.com/BVLC/caffe/issues/4843)
+
+4. numpy/arrayobject.h not found
+
+In Makefile.config
+- Find PYTHON_INCLUDE, change `/usr/lib/python3.5/dist-packages/numpy/core/include` to `/usr/local/lib/python3.5/dist-packages/numpy/core/include`

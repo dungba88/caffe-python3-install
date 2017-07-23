@@ -37,7 +37,7 @@ sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev
 sudo apt-get install libboost-all-dev
 sudo apt-get install libhdf5-dev
 sudo apt-get install protobuf-compiler libprotobuf-dev
-sudo apt-get install libblas-dev libcblas-dev libatlas-base-dev
+sudo apt-get install libblas-dev libcblas-dev libatlas-base-dev libopenblas-dev
 sudo apt-get install libleveldb-dev
 sudo apt-get install libsnappy-dev
 ```
@@ -54,19 +54,18 @@ cp Makefile.config.example Makefile.config
 3. Modify Makefile.config
 
 **CPU-only**
-Uncomment `CPU_ONLY := 1`
+- Uncomment `CPU_ONLY := 1`
 
 **All**
 
-Uncomment section with Python3
-
-Uncomment `OPENCV_VERSION := 3`
-
-Add `/usr/include/hdf5/serial` to INCLUDE_DIRS (https://github.com/BVLC/caffe/issues/4808)
+- Uncomment section with Python3
+- Uncomment `OPENCV_VERSION := 3`
+- Add `/usr/include/hdf5/serial` to INCLUDE_DIRS (https://github.com/BVLC/caffe/issues/4808)
+- Change `BLAS := atlas` to `BLAS := open` to use openblas instead. I have `undefined symbol cblas_sgemm` when using atlas.
 
 4. Modify Makefile
 
-Change `hdf5_hl` and `hdf5` in LIBRARIES to `hdf5_serial_hl` and `hdf5_serial` respectively
+- Change `hdf5_hl` and `hdf5` in LIBRARIES to `hdf5_serial_hl` and `hdf5_serial` respectively
 
 5. Compile and test
 
@@ -80,6 +79,9 @@ make runtest
 
 1. hdf5.h: No such file or directory
 
-Add `/usr/include/hdf5/serial` to INCLUDE_DIRS (https://github.com/BVLC/caffe/issues/4808)
+- Add `/usr/include/hdf5/serial` to INCLUDE_DIRS (https://github.com/BVLC/caffe/issues/4808)
+- Change `hdf5_hl` and `hdf5` in LIBRARIES to `hdf5_serial_hl` and `hdf5_serial` respectively
 
-Change `hdf5_hl` and `hdf5` in LIBRARIES to `hdf5_serial_hl` and `hdf5_serial` respectively
+2. Undefined symbol cblas_*
+
+- Change `BLAS := atlas` to `BLAS := open` to use openblas instead

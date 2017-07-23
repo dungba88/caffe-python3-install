@@ -2,6 +2,8 @@
 
 This document is to help people struggling with installing Caffe on Python3 and Ubuntu 17.04
 
+Install the dependencies first, as specified in the below section. Then follow the rest of the guide. If there are some errors while compiling/running, please check the [troubleshooting](#troubleshooting) section and make sure all dependencies are installed.
+
 ### install dependencies
 
 ```shell
@@ -73,7 +75,7 @@ sudo cp build/lib/libcaffe.so* /usr/lib
 
 5. Possible errors:
 
-- Check [Troubleshooting](#troubleshooting) section, issue 1, 2, 3
+- Check [troubleshooting](#troubleshooting) section, issue 1, 2, 3
 
 ### install pycaffe
 
@@ -100,9 +102,9 @@ python3 -c "import caffe"
 
 4. Possible errors:
 
-- Check [Troubleshooting](#troubleshooting) section, issue 4
+- Check [troubleshooting](#troubleshooting) section, issue 4
 
-### Troubleshooting
+### troubleshooting
 
 1. hdf5.h: No such file or directory
 

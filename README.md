@@ -63,7 +63,11 @@ cp Makefile.config.example Makefile.config
 
 - Change `hdf5_hl` and `hdf5` in LIBRARIES to `hdf5_serial_hl` and `hdf5_serial` respectively
 
-5. Compile and test
+5. Additional changes
+
+- Create symbolic link from libboost_python-py35.so to libboost_python3 (https://github.com/BVLC/caffe/issues/4843)
+
+6. Compile and test
 
 ```shell
 make all
@@ -81,3 +85,7 @@ make runtest
 2. Undefined symbol cblas_*
 
 - Change `BLAS := atlas` to `BLAS := open` to use openblas instead
+
+3. ld cannot find lboost_python3
+
+- Create symbolic link from libboost_python-py35.so to libboost_python3 (https://github.com/BVLC/caffe/issues/4843)

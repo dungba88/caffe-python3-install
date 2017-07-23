@@ -1,8 +1,8 @@
-# Install Caffe with Python3 on Ubuntu 17.04
+# install Caffe with Python3 on Ubuntu 17.04
 
 This document is to help people struggling with installing Caffe on Python3 and Ubuntu 17.04
 
-### Install dependencies
+### install dependencies
 
 ```shell
 sudo pip3 install numpy
@@ -19,7 +19,7 @@ sudo apt-get install python3-skimage
 sudo apt-get install python3-protobuf
 ```
 
-### Install OpenCV3
+### install opencv3
 
 Guide is taken from http://www.pyimagesearch.com/2015/07/20/install-opencv-3-0-and-python-3-4-on-ubuntu/
 
@@ -35,7 +35,7 @@ make
 sudo make install
 ```
 
-### Install Caffe (without GPU support)
+### install caffe (without GPU support)
 
 Guide is taken from http://caffe.berkeleyvision.org/install_apt.html
 
@@ -63,19 +63,42 @@ make test
 make runtest
 ```
 
-4. Possible errors:
+4. Install
+
+By default, Caffe will not be installed (no target 'install' provided). We can copy the .so file manually
+
+```shell
+sudo cp build/lib/libcaffe.so* /usr/lib
+```
+
+5. Possible errors:
 
 - Check [Troubleshooting](#troubleshooting) section, issue 1, 2, 3
 
-### Install PyCaffe
+### install pycaffe
 
 1. Compile
 
 ```shell
 make pycaffe
 ```
+2. Install
 
-2. Possible errors:
+Install pycaffe manually by copying to dist-packages
+
+```shell
+sudo cp -r python/caffe/ /usr/local/lib/python3.5/dist-packages/
+```
+
+3. Test
+
+Make sure the below command works without any errors
+
+```shell
+python3 -c "import caffe"
+```
+
+4. Possible errors:
 
 - Check [Troubleshooting](#troubleshooting) section, issue 4
 

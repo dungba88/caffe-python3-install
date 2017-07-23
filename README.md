@@ -65,7 +65,7 @@ make runtest
 
 4. Possible errors:
 
-- Check [Troubleshooting](#Trouble shooting) section, issue 1, 2, 3
+- Check [Troubleshooting](#troubleshooting) section, issue 1, 2, 3
 
 ### Install PyCaffe
 

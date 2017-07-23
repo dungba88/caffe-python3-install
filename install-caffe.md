@@ -79,7 +79,7 @@ sudo cp build/lib/libcaffe.so* /usr/lib
 
 ### install caffe (with GPU support)
 
-First install CUDA and CUDNN
+1. First install CUDA and CUDNN
 
 ```shell
 sudo apt-get install nvidia-cuda-dev nvidia-cuda-toolkit nvidia-nsight
@@ -91,6 +91,10 @@ The rest are mostly the same with above section, but there are some differences:
 - In Makefile.config, uncomment USE_CDNN and comment CPU_ONLY
 - In Makefile.config, since I installed CUDA via apt-get, so CUDA_DIR := /usr needs to be uncommented
 - In Makefile, since I installed on Ubuntu 17.04, which has GCC6 that CUDA doesn't support, so CXX need to be set to clang-3.8. Find NVCCFLAGS += -ccbin=$(CXX) and change $(CXX) to clang-3.8. I couldn't set CUSTOM_CXX in Makefile.config to clang-3.8 because another error comes up (`Cannot static link with compiler clang-3.8`)
+
+2. Possible errors:
+
+- Check [troubleshooting](#troubleshooting) section, issue 1, 2, 3, 5
 
 ### install pycaffe
 
@@ -142,3 +146,11 @@ In Makefile.config
 
 In Makefile.config
 - Find PYTHON_INCLUDE, change `/usr/lib/python3.5/dist-packages/numpy/core/include` to `/usr/local/lib/python3.5/dist-packages/numpy/core/include`
+
+5. libcaffe.so undefined reference to caffe::*
+
+- Make sure that you have `make clean` before `make all`.
+- Also delete the libcaffe.so* we have copied to /usr/lib
+```shell
+sudo rm -f /usr/lib/libcaffe.so*
+```

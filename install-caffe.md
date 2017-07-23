@@ -7,18 +7,34 @@ Install the dependencies first, as specified in the below section. Then follow t
 ### install dependencies
 
 ```shell
+# python3 modules (numpy, protobuf, skimage)
 sudo pip3 install numpy
-sudo apt-get install build-essential cmake git pkg-config
-sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev
-sudo apt-get install libboost-all-dev
-sudo apt-get install libhdf5-dev
-sudo apt-get install protobuf-compiler libprotobuf-dev
-sudo apt-get install libblas-dev libcblas-dev libatlas-base-dev libopenblas-dev
-sudo apt-get install libleveldb-dev
-sudo apt-get install libsnappy-dev
-sudo apt-get install libsnappy-dev
 sudo apt-get install python3-skimage
 sudo apt-get install python3-protobuf
+
+# build essential
+sudo apt-get install build-essential cmake git pkg-config
+
+# gflags, glog, lmdb
+sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev
+
+# boost
+sudo apt-get install libboost-all-dev
+
+# hdf5
+sudo apt-get install libhdf5-dev
+
+# protobuf
+sudo apt-get install protobuf-compiler libprotobuf-dev
+
+# blas
+sudo apt-get install libblas-dev libcblas-dev libatlas-base-dev libopenblas-dev
+
+# leveldb
+sudo apt-get install libleveldb-dev
+
+# snappy
+sudo apt-get install libsnappy-dev
 ```
 
 ### install opencv3

@@ -25,7 +25,6 @@ make
 sudo make install
 ```
 
-
 ### Install Caffe (without GPU support)
 
 Guide is taken from http://caffe.berkeleyvision.org/install_apt.html
@@ -53,11 +52,8 @@ cp Makefile.config.example Makefile.config
 
 3. Modify Makefile.config
 
-**CPU-only**
 - Uncomment `CPU_ONLY := 1`
-
-**All**
-
+- Uncomment `WITH_PYTHON_LAYER := 1`
 - Uncomment section with Python3
 - Uncomment `OPENCV_VERSION := 3`
 - Add `/usr/include/hdf5/serial` to INCLUDE_DIRS (https://github.com/BVLC/caffe/issues/4808)

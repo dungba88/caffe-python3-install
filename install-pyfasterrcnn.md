@@ -11,3 +11,7 @@ git remote add caffe-fast-rcnn git://github.com/rbgirshick/caffe-fast-rcnn.git
 git fetch caffe-fast-rcnn
 git cherry-pick -n 0dcd397b29507b8314e252e850518c5695efbb83
 ```
+
+Another change required to fix `AttributeError: can't set attribute` in caffe.Net is patched here https://github.com/andpol5/caffe/commit/1bbcb0605fe67525a8493fb477d30119893a0978
+
+

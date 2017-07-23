@@ -79,7 +79,7 @@ make pycaffe
 
 2. Possible errors:
 
-Check [Troubleshooting](#Trouble shooting) section, issue 4
+Check [Troubleshooting](#troubleshooting) section, issue 4
 
 ### Troubleshooting
 

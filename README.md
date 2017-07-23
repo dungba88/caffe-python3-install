@@ -2,18 +2,28 @@
 
 This document is to help people struggling with installing Caffe on Python3 and Ubuntu 17.04
 
-### Install OpenCV3
-
-Guide is taken from http://www.pyimagesearch.com/2015/07/20/install-opencv-3-0-and-python-3-4-on-ubuntu/
-
-1. Install dependencies
+### Install dependencies
 
 ```shell
 sudo pip3 install numpy
 sudo apt-get install build-essential cmake git pkg-config
- ```
+sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev
+sudo apt-get install libboost-all-dev
+sudo apt-get install libhdf5-dev
+sudo apt-get install protobuf-compiler libprotobuf-dev
+sudo apt-get install libblas-dev libcblas-dev libatlas-base-dev libopenblas-dev
+sudo apt-get install libleveldb-dev
+sudo apt-get install libsnappy-dev
+sudo apt-get install libsnappy-dev
+sudo apt-get install python3-skimage
+sudo apt-get install python3-protobuf
+```
 
-2. Checkout and compile
+### Install OpenCV3
+
+Guide is taken from http://www.pyimagesearch.com/2015/07/20/install-opencv-3-0-and-python-3-4-on-ubuntu/
+
+1. Checkout and compile
 
 ```shell
 git clone https://github.com/opencv/opencv
@@ -29,19 +39,7 @@ sudo make install
 
 Guide is taken from http://caffe.berkeleyvision.org/install_apt.html
 
-1. Install dependencies
-
-```shell
-sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev
-sudo apt-get install libboost-all-dev
-sudo apt-get install libhdf5-dev
-sudo apt-get install protobuf-compiler libprotobuf-dev
-sudo apt-get install libblas-dev libcblas-dev libatlas-base-dev libopenblas-dev
-sudo apt-get install libleveldb-dev
-sudo apt-get install libsnappy-dev
-```
-
-2. Checkout
+1. Checkout
 
 ```shell
 cd ~
@@ -50,14 +48,14 @@ cd caffe
 cp Makefile.config.example Makefile.config
 ```
 
-3. Modify Makefile.config
+2. Modify Makefile.config
 
 - Uncomment `CPU_ONLY := 1`
 - Uncomment `WITH_PYTHON_LAYER := 1`
 - Uncomment `OPENCV_VERSION := 3`
 - Uncomment section with Python3
 
-6. Compile and test
+3. Compile and test
 
 ```shell
 make all
@@ -65,7 +63,7 @@ make test
 make runtest
 ```
 
-7. Possible errors:
+4. Possible errors:
 
 - Check [Troubleshooting](#Trouble shooting) section, issue 1, 2, 3
 

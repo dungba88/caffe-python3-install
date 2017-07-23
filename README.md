@@ -57,14 +57,19 @@ cp Makefile.config.example Makefile.config
 Uncomment `CPU_ONLY := 1`
 
 **All**
+
 Uncomment section with Python3
+
 Uncomment `OPENCV_VERSION := 3`
+
 Add `/usr/include/hdf5/serial` to INCLUDE_DIRS (https://github.com/BVLC/caffe/issues/4808)
 
 4. Modify Makefile
+
 Change `hdf5_hl` and `hdf5` in LIBRARIES to `hdf5_serial_hl` and `hdf5_serial` respectively
 
 5. Compile and test
+
 ```shell
 make all
 make test
@@ -72,6 +77,9 @@ make runtest
 ```
 
 ### Troubleshooting
+
 1. hdf5.h: No such file or directory
+
 Add `/usr/include/hdf5/serial` to INCLUDE_DIRS (https://github.com/BVLC/caffe/issues/4808)
+
 Change `hdf5_hl` and `hdf5` in LIBRARIES to `hdf5_serial_hl` and `hdf5_serial` respectively

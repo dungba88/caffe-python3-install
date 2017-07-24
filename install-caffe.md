@@ -121,7 +121,7 @@ make pycaffe
 ```
 2. Install
 
-Install pycaffe manually by copying to dist-packages
+Install pycaffe manually by copying to dist-packages (in Ubuntu 17.04 it's in /usr/local/lib, but make sure you verify the path first)
 
 ```shell
 sudo cp -r python/caffe/ /usr/local/lib/python3.5/dist-packages/
@@ -160,6 +160,7 @@ In Makefile.config
 
 4. numpy/arrayobject.h not found
 
+Make sure you get the correct path of Python dist-packages directory. In Ubuntu 17.04 it's in /usr/local/lib. I remember earlier version it's in /usr/lib.
 In Makefile.config
 - Find PYTHON_INCLUDE, change `/usr/lib/python3.5/dist-packages/numpy/core/include` to `/usr/local/lib/python3.5/dist-packages/numpy/core/include`
 

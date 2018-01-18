@@ -91,7 +91,7 @@ sudo cp build/lib/libcaffe.so* /usr/lib
 
 5. Possible errors:
 
-- Check [troubleshooting](#troubleshooting) section, issue 1, 2, 3
+- Check [troubleshooting](#troubleshooting) section, issue 1, 2, 3, 6
 
 ### install caffe (with GPU support)
 
@@ -114,7 +114,7 @@ The rest are mostly the same with the non-GPU setup, but there are some differen
 
 2. Possible errors:
 
-- Check [troubleshooting](#troubleshooting) section, issue 1, 2, 3, 5
+- Check [troubleshooting](#troubleshooting) section, issue 1, 2, 3, 5, 6
 
 ### install pycaffe
 
@@ -175,3 +175,7 @@ In Makefile.config
 ```shell
 sudo rm -f /usr/lib/libcaffe.so*
 ```
+
+6. SyntaxError: invalid syntax in rrule.py
+
+- pip3 install python-dateutil --upgrade (https://github.com/dungba88/caffe-python3-install/issues/1)

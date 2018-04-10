@@ -178,4 +178,8 @@ sudo rm -f /usr/lib/libcaffe.so*
 
 6. SyntaxError: invalid syntax in rrule.py
 
-- pip3 install python-dateutil --upgrade (https://github.com/dungba88/caffe-python3-install/issues/1)
+```shell
+pip3 install python-dateutil --upgrade 
+```
+
+(https://github.com/dungba88/caffe-python3-install/issues/1)

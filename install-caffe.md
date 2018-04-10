@@ -176,7 +176,7 @@ In Makefile.config
 sudo rm -f /usr/lib/libcaffe.so*
 ```
 
-6. SyntaxError: invalid syntax in rrule.py
+6. SyntaxError: invalid syntax in rrule.py (Can't create weekday with n == 0)
 
 Update python-dateutil (https://github.com/dungba88/caffe-python3-install/issues/1)
 

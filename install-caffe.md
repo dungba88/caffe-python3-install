@@ -145,6 +145,8 @@ python3 -c "import caffe"
 
 ### troubleshooting
 
+*Note: Only follow this section if you encounter any error*
+
 1. hdf5.h: No such file or directory
 
 In Makefile.config

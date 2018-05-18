@@ -4,6 +4,8 @@ This document is to help people struggling with installing Caffe on Python3 and 
 
 Install the dependencies first, as specified in the below section. Then follow the rest of the guide. If there are some errors while compiling/running, please check the [troubleshooting](#troubleshooting) section and make sure all dependencies are installed.
 
+*Note: this guide is intended for installing Caffe alone. If you want to run pyfasterrcnn, refer to the guide [install py-faster-rcnn with python3](https://github.com/dungba88/caffe-python3-install/blob/master/install-pyfasterrcnn.md) for additional required steps*
+
 ### install dependencies
 
 ```shell

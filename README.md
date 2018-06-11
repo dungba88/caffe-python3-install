@@ -2,7 +2,7 @@
 
 This is a collection of guides regarding running caffe and deep learning models with python to help people who struggle at getting them up and running.
 
-*Note: It seems in Ubuntu 17.04 you can now install caffe with apt-get (http://caffe.berkeleyvision.org/install_apt.html). Please try the instruction in the official guide first and only use this guide if thing went wrong.*
+*Note: It seems in Ubuntu 17.04 you can now install caffe with apt-get (http://caffe.berkeleyvision.org/install_apt.html). Please try the instruction in the official guide first and only use this guide if thing went wrong or you want to install caffe from source.*
 
 ### why python3, ubuntu 17.04
 

@@ -22,4 +22,4 @@ Make the following changes for CPU only
 - in lib/setup.py, uncomment `CUDA = locate_cuda()` and the `nms.gpu_nms` extension
 - in lib/fast-rcnn/config.py set `USE_GPU_NMS` to False
 
-Then follow the rest of the original guide!
+Then follow the rest of the [original guide](https://github.com/dungba88/caffe-python3-install/blob/master/install-caffe.md)!
